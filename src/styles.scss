@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: "Mulish";
+    src: url("/assets/Fonts/Mulish/Mulish-VariableFont_wght.ttf");
+}
+
+@import "~bootstrap/dist/css/bootstrap.css"

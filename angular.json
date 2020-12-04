@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "rationale"
+    }
+  },
+  "defaultProject": "rationale",
+  "cli": {
+    "analytics": "30a4098f-ff62-44c3-83aa-422697375ade"
+  }
 }
