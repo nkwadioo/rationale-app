@@ -4,8 +4,58 @@
 .service {
 
     .service__img {
-        width: 140px;
+        width: 170px;
+        height: 180px;
         float: left;
+        margin: 0 10px;
     }
     
+    > div.col-12 {
+        margin-bottom: 24px;
+        position: relative;
+    
+        &::before,
+        &::after {
+            content: "";
+            height: 3px;
+            width: 200px;
+            background-color: #dedede;
+            position: absolute;
+            
+        }
+        
+        &::before {
+            transform: rotate(-90deg);
+            transform-origin: bottom left;
+            width: 7% !important;
+        }
+
+        &.odd::before,
+        &.odd:after {
+            left: 0;
+            bottom: -2%;
+        }
+
+        &.even::before,
+        &.even::after {
+            left: 100%;
+        }
+        &.even::after {
+            bottom: 100%;
+            transform: rotate(-180deg);
+            transform-origin: bottom left;
+        }
+
+        &.even:before {
+            top: 80px;
+        }
+
+    }
+
+    .service__info {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
 }
+
