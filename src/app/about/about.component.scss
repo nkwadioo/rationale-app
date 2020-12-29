@@ -15,3 +15,22 @@ img {
 div {
     font-size: 23px;
 }
+
+
+@media (max-width: 760px) {
+    div {
+        font-size: 18px;
+    }
+
+    .content {
+        padding: 0px 40px 14px !important;
+    }
+
+    .sub_tail {
+        margin: 0;
+    }
+
+    img {
+        height: 160px;
+    }
+}

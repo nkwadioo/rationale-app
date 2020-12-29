@@ -8,6 +8,13 @@ img {
 }
 
 
+@media (max-width: 760px) {
+    img {
+        height: 160px;
+    }
+}
+
+
 .pure-material-textfield-outlined {
     --pure-material-safari-helper1: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
     position: relative;

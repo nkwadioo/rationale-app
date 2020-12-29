@@ -5,4 +5,8 @@
     src: url("/assets/Fonts/Mulish/Mulish-VariableFont_wght.ttf");
 }
 
-@import "~bootstrap/dist/css/bootstrap.css"
+@import "~bootstrap/dist/css/bootstrap.css";
+
+h3 {
+    font-weight: 700;
+}

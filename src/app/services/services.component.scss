@@ -3,11 +3,13 @@
 
 .service {
 
+    
+
     .service__img {
-        width: 170px;
+        max-width: 170px;
         height: 180px;
-        float: left;
-        margin: 0 10px;
+        // float: left;
+        // margin: 0 10px;
     }
     
     > div.col-12 {
@@ -47,15 +49,45 @@
         }
 
         &.even:before {
-            top: 80px;
+            top: 0;
+            transform: rotate(90deg);
+            transform-origin: left;
         }
 
     }
 
     .service__info {
         font-size: 20px;
-        font-weight: bold;
+        font-weight: 500;
     }
 
 }
 
+@media (min-width: 320px) {
+    
+}
+
+@media (max-width: 760px) {
+    .service__img {
+        max-width: initial !important;
+        height: 56% !important;
+    }
+
+    div.col-12.even{
+        &::after {
+            top: -12px;
+        }
+        &::before {
+            top: -10px !important;
+        }
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    .heading {
+        font-size: 17px;
+    }
+    
+}
