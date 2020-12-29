@@ -7,11 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SliderComponent implements OnInit {
   slideIndex = 1;
+  setInterConter = 0;
 
   constructor() { }
 
   ngOnInit(): void {
     this.showSlides(this.slideIndex);
+
+    setInterval( () => {
+      if (this.setInterConter > 2) {
+        this.plusSlides(1);
+        this.setInterConter = 0;
+        console.log('auto slide');
+      }
+      this.setInterConter++;
+    }, 3000);
+
+    // setInterval()
   }
 
   /* Slideshow JavaScript */
@@ -20,10 +32,12 @@ export class SliderComponent implements OnInit {
 
   plusSlides(n) {
     this.showSlides(this.slideIndex += n);
+    this.setInterConter = 0;
   }
 
   currentSlide(n) {
     this.showSlides(this.slideIndex = n);
+    this.setInterConter = 0;
   }
 
   showSlides(n) {
