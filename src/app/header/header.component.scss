@@ -41,6 +41,11 @@
     border-color: rgba(0,0,0,.0) !important;
 }
 
+@media (max-width: 300px)  {
+    a {
+        margin-right: -2px !important;
+    }
+}
 
 
 @media (min-width: 425px) {
