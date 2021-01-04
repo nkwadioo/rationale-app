@@ -1,17 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent implements OnInit, AfterViewInit {
   slideIndex = 1;
 
   constructor() { }
 
   ngOnInit(): void {
+    
+  }
+
+  ngAfterViewInit(): void {
     this.showSlides(this.slideIndex);
+    
   }
 
   /* Slideshow JavaScript */
@@ -29,17 +34,14 @@ export class ProjectsComponent implements OnInit {
   showSlides(n) {
     let i;
     let slides: any = document.getElementsByClassName("mySlides");
-    let dots: any = document.getElementsByClassName("dot");
-    if (n > slides.length) {this.slideIndex = 1}
-    if (n < 1) {this.slideIndex = slides.length};
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    if (slides.length > 0) {
+      if (n > slides.length) {this.slideIndex = 1}
+      if (n < 1) {this.slideIndex = slides.length};
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[this.slideIndex-1].style.display = "block";
     }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].classList.remove("active");
-    }
-    slides[this.slideIndex-1].style.display = "block";
-    dots[this.slideIndex-1].classList.add("active");
   }
 /* Slideshow JavaScript */
 

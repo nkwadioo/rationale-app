@@ -1,61 +1,11 @@
 <div class="container">
     <div class="row service">
-        <h3 class="col-12">Services we offer</h3>
-
-        <div class="col-12 odd">
-            <img src="/assets/images/services/project_inception.svg" alt="" class="service__img">
-            <div class="service__info">
-                <div class="heading">Project inception and feasibility</div>
-                <div class="body"></div>
-            </div>
-        </div>
-        <div class="col-12 even">
-            <img src="/assets/images/services/design_cost.svg" alt="" class="service__img">
-            <div class="service__info">
-                <div class="heading">System concept and Detailed design, specification and cost estimateTender documentation and adgudication</div>
-                <div class="body"></div>
-            </div>
-        </div>
-        <div class="col-12 odd">
-            <img src="/assets/images/services/contract.svg" alt="" class="service__img">
-            <div class="service__info">
-                <div class="heading">Tender documentation and adgudication</div>
-                <div class="body"></div>
-            </div>
-        </div>
-        <div class="col-12 even">
-            <img src="/assets/images/services/qa_engineers.svg" alt="" class="service__img">
-            <div class="service__info">
-                <div class="heading">Constuction suppervision and administration</div>
-                <div class="body"></div>
-            </div>
-        </div>
-        <div class="col-12 odd">
-            <img src="/assets/images/services/handover.svg" alt="" class="service__img">
-            <div class="service__info">
-                <div class="heading">System independence and/or intergrated commissioning and handover</div>
-                <div class="body"></div>
-            </div>
-        </div>
-        <div class="col-12 even">
-            <img src="/assets/images/services/audit.svg" alt="" class="service__img">
-            <div class="service__info">
-                <div class="heading">Building audits and Due deligence execises</div>
-                <div class="body"></div>
-            </div>
-        </div>
-        <div class="col-12 odd">
-            <img src="/assets/images/services/perspective.svg" alt="" class="service__img">
-            <div class="service__info">
-                <div class="heading">Perspective and retional design</div>
-                <div class="body"></div>
-            </div>
-        </div>
-        <div class="col-12 even">
-            <img src="/assets/images/services/droughting.svg" alt="" class="service__img">
-            <div class="service__info">
-                <div class="heading">Droughting services</div>
-                <div class="body"></div>
+        <h3 class="">Services we offer</h3>
+        <div class="col-12 row mx-md-0 mx-sm-0 mx-0" *ngFor="let service of services; let i = index" [ngClass]="{'odd': i % 2 == 0, 'even': i % 2 != 0}">
+            <img class="col-md-4 col-sm-12 service__img" src="{{service.image}}" alt="">
+            <div class="col-md-8 col-sm-12 service__info">
+                <div class="heading">{{service.headline}}</div>
+                <div class="body">{{service.body}}</div>
             </div>
         </div>
     </div>

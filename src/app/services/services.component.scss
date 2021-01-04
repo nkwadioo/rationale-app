@@ -41,13 +41,14 @@
             left: 100%;
         }
         &.even::after {
-            bottom: 100%;
+            bottom: 0;
             transform: rotate(-180deg);
             transform-origin: bottom left;
         }
 
         &.even:before {
-            top: 80px;
+            bottom: -4px;
+            transform-origin: left;
         }
 
     }
@@ -59,3 +60,28 @@
 
 }
 
+@media (min-width: 320px) {
+    
+}
+
+@media (max-width: 760px) {
+    .service__img {
+        max-width: initial !important;
+        height: 56% !important;
+    }
+
+    div.col-12.even{
+        &::before {
+            bottom: -2px !important;
+        }
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    .heading {
+        font-size: 17px;
+    }
+    
+}

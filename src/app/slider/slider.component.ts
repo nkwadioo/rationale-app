@@ -1,17 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })
-export class SliderComponent implements OnInit {
+
+export class SliderComponent implements OnInit, AfterViewInit {
   slideIndex = 1;
+
+  images: string[];
 
   constructor() { }
 
   ngOnInit(): void {
+    this.images = ['01', '02', '03', '04', '05', '06'];
+    
+
+    // setInterval()
+  }
+
+  ngAfterViewInit(): void {
     this.showSlides(this.slideIndex);
+
+    setInterval( () => {
+      if (this.setInterConter > 1) {
+        this.plusSlides(1);
+        this.setInterConter = 0;
+        console.log('auto slide');
+      }
+      this.setInterConter++;
+    }, 3000);
   }
 
   /* Slideshow JavaScript */
@@ -29,6 +48,7 @@ export class SliderComponent implements OnInit {
   showSlides(n) {
     let i;
     let slides: any = document.getElementsByClassName("mySlides_2");
+    console.log('[slider] change slide')
     // let dots: any = document.getElementsByClassName("dot");
     if (n > slides.length) {this.slideIndex = 1}
     if (n < 1) {this.slideIndex = slides.length};
