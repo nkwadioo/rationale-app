@@ -1,7 +1,7 @@
 <div class="slideshow-container_2 row" id="home">
     <div class="mySlides_2 w-100" *ngFor="let image of images">
         <!-- <div class="numbertext">1 / 4</div> -->
-        <img src="{{'/assets/images/slider/' + image + '.jpg'}}" style="width: 100%;">
+        <img src="{{'assets/images/slider/' + image + '.jpg'}}" style="width: 100%;">
     </div>
     
     <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
