@@ -10,6 +10,7 @@ export class SliderComponent implements OnInit, AfterViewInit {
   slideIndex = 1;
 
   images: string[];
+  setInterConter = 0;
 
   constructor() { }
 
