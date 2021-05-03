@@ -8,9 +8,9 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 export class SliderComponent implements OnInit, AfterViewInit {
   slideIndex = 1;
+  setInterConter = 0;
 
   images: string[];
-  setInterConter = 0;
 
   constructor() { }
 
@@ -25,13 +25,15 @@ export class SliderComponent implements OnInit, AfterViewInit {
     this.showSlides(this.slideIndex);
 
     setInterval( () => {
-      if (this.setInterConter > 1) {
+      if (this.setInterConter > 2) {
         this.plusSlides(1);
         this.setInterConter = 0;
         console.log('auto slide');
       }
       this.setInterConter++;
     }, 3000);
+
+    // setInterval()
   }
 
   /* Slideshow JavaScript */
@@ -40,10 +42,12 @@ export class SliderComponent implements OnInit, AfterViewInit {
 
   plusSlides(n) {
     this.showSlides(this.slideIndex += n);
+    this.setInterConter = 0;
   }
 
   currentSlide(n) {
     this.showSlides(this.slideIndex = n);
+    this.setInterConter = 0;
   }
 
   showSlides(n) {

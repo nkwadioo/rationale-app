@@ -1,12 +1,14 @@
-<div class="container">
+<div class="container" id="services">
+    <h3 class="col-12">Our Services</h3>
     <div class="row service">
-        <h3 class="">Services we offer</h3>
-        <div class="col-12 row mx-md-0 mx-sm-0 mx-0" *ngFor="let service of services; let i = index" [ngClass]="{'odd': i % 2 == 0, 'even': i % 2 != 0}">
-            <img class="col-md-4 col-sm-12 service__img" src="{{service.image}}" alt="">
-            <div class="col-md-8 col-sm-12 service__info">
-                <div class="heading">{{service.headline}}</div>
-                <div class="body">{{service.body}}</div>
+        <div *ngFor="let service of services; let i = index">
+            <div class="service__info">
+                <h4 class="heading">{{service.headline}}</h4>
+                <ul class="body">
+                    <li *ngFor="let description of service.description">{{description}}</li>
+                </ul>
             </div>
+            <img class="service__img" src="{{service.image}}" alt="">
         </div>
     </div>
 </div>

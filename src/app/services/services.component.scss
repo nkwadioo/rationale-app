@@ -3,59 +3,68 @@
 
 .service {
 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+
     .service__img {
-        width: 170px;
-        height: 180px;
-        float: left;
-        margin: 0 10px;
+        position: absolute;
+        bottom: 16px;
+        right: 15px;
+        filter: drop-shadow(4px 0px 2px black);
+        z-index: -1;
     }
     
-    > div.col-12 {
-        margin-bottom: 24px;
+    > div {
+        // margin-bottom: 24px;
         position: relative;
-    
-        &::before,
-        &::after {
-            content: "";
-            height: 3px;
-            width: 200px;
-            background-color: #dedede;
-            position: absolute;
+        padding: 1rem;
+        box-shadow: 0px 0px 20px 3px #00000059;
+        min-height: 300px;
+        // &::before,
+        // &::after {
+        //     content: "";
+        //     height: 3px;
+        //     width: 200px;
+        //     background-color: #dedede;
+        //     position: absolute;
             
-        }
+        // }
         
-        &::before {
-            transform: rotate(-90deg);
-            transform-origin: bottom left;
-            width: 7% !important;
-        }
+        // &::before {
+        //     transform: rotate(-90deg);
+        //     transform-origin: bottom left;
+        //     width: 7% !important;
+        // }
 
-        &.odd::before,
-        &.odd:after {
-            left: 0;
-            bottom: -2%;
-        }
+        // &.odd::before,
+        // &.odd:after {
+        //     left: 0;
+        //     bottom: -2%;
+        // }
 
-        &.even::before,
-        &.even::after {
-            left: 100%;
-        }
-        &.even::after {
-            bottom: 0;
-            transform: rotate(-180deg);
-            transform-origin: bottom left;
-        }
+        // &.even::before,
+        // &.even::after {
+        //     left: 100%;
+        // }
+        // &.even::after {
+        //     bottom: 0;
+        //     transform: rotate(-180deg);
+        //     transform-origin: bottom left;
+        // }
 
-        &.even:before {
-            bottom: -4px;
-            transform-origin: left;
-        }
+        // &.even:before {
+        //     top: 0;
+        //     transform: rotate(90deg);
+        //     transform-origin: left;
+        // }
 
     }
 
     .service__info {
         font-size: 20px;
-        font-weight: bold;
+        font-weight: 500;
     }
 
 }
@@ -83,5 +92,5 @@
     .heading {
         font-size: 17px;
     }
-    
+
 }
