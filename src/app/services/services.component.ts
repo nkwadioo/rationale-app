@@ -17,7 +17,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.services = [
       {
-        image: '/assets/images/services/fire.svg',
+        image: './assets/images/services/fire.svg',
         headline: 'Fire Engineering',
         description: [
           'Fire Safety Engineering',
@@ -30,7 +30,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         ]
       },
       {
-        image: '/assets/images/services/enginer.svg',
+        image: './assets/images/services/enginer.svg',
         headline: 'Mechanical Engineering',
         description: [
           'HVAC Systems',
@@ -41,7 +41,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         ]
       },
       {
-        image: '/assets/images/services/civil.svg',
+        image: './assets/images/services/civil.svg',
         headline: 'Civil and Structural',
         description: [
           'Structural Design and Analysis',
@@ -52,7 +52,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         ]
       },
       {
-        image: '/assets/images/services/architecture.svg',
+        image: './assets/images/services/architecture.svg',
         headline: 'Architecture',
         description: [
           'Building Plans',
@@ -61,7 +61,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
         ]
       },
       {
-        image: '/assets/images/services/electricity.svg',
+        image: './assets/images/services/electricity.svg',
         headline: 'Electrical Engineering',
         description: [
           'Power Transmission and Distribution',
