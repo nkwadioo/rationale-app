@@ -83,6 +83,58 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     }
   ];
 
+  clients = [
+    {
+      image: './assets/images/projects/01',
+      headline: 'Puma Filling Station Groblersdal',
+      services: 'Fire and Mechanical Engineering services as required for the design, procurement, construction and handover of a new petrol station in Groblersdal.',
+      client: 'MADS Architects',
+      location: 'Groblersdal | Limpopo Province | South Africa'
+    },
+    {
+      image: './assets/images/projects/02',
+      headline: 'MACP Tzaneen Hotel',
+      services: 'Project Management, Fire Engineering and Architectural services as required for council submission, procurement and construction of new buildings as well as modification of existing ones.',
+      client: 'MACP Properties',
+      location: 'Tzaneen | Limpopo Province | South Africa'
+    },
+    {
+      image: './assets/images/projects/04',
+      headline: 'Rapulana Clinic',
+      services: 'Fire Engineering services as required for the design, procurement, construction and handover of a new clinic.',
+      client: 'AM Consulting Engineers',
+      location: 'Mahikeng | North West Province | South Africa'
+    },
+    {
+      image: './assets/images/projects/06',
+      headline: 'TruckStore Phase 2',
+      services: 'Fire Engineering services as required for the council approval for the planned extension fo the Truck Store Warehouse.',
+      client: 'DSP Consulting cc',
+      location: 'Centurion | Gauteng Province | South Africa'
+    },
+    {
+      image: './assets/images/projects/11',
+      headline: 'Atomo Diagnostics',
+      services: 'Fire Engineering services as required for rational design for the Atomo Diagnostics warehouse.',
+      client: 'ME Engineers',
+      location: 'Cape Town | Western Cape Province | South Africa'
+    },
+    {
+      image: './assets/images/projects/10',
+      headline: 'Nancefield Precinct Development',
+      services: 'Fire Engineering services as required for the design, procurement, construction supervision and handover of a low cost housing complex.',
+      client: 'Johannesburg Social Housing COmpany',
+      location: 'Soweto | Gauteng Province | South Africa'
+    },
+    {
+      image: './assets/images/projects/13',
+      headline: 'Cisco SA Head Quarters Internal Layout ',
+      services: 'Fire Engineering and Architectural services as required for the design, council submission and occupancy of the Cisco SA head office internal layout changes.',
+      client: 'DSP Consulting cc',
+      location: 'Bryanston | Gauteng Province | South Africa'
+    },
+  ]
+
   constructor() { }
 
   ngOnInit(): void {

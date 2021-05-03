@@ -7,6 +7,10 @@
 .image_wrapper {
     position: relative;
 
+    img {
+        max-height: 200px;
+    }
+
     .prev,
     .next {
         cursor: pointer;

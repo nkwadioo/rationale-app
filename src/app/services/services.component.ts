@@ -70,6 +70,16 @@ export class ServicesComponent implements OnInit, AfterViewInit {
           'UPS and Generators',
           'Solar Systems',
         ]
+      },
+      {
+        image: './assets/images/services/quantity.svg',
+        headline: 'Quantity Surveying',
+        description: [
+          'Project Cost Management',
+          'Specification and Bills of Quantities',
+          'Tender Evaluation and Adjudication',
+          'Cost Estimation,',
+        ]
       }
     ];
     
