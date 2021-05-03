@@ -17,44 +17,59 @@ export class ServicesComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.services = [
       {
-        image: '/assets/images/services/project_inception.svg',
-        headline: 'Project inception and feasibility',
-        body: ''
+        image: '/assets/images/services/fire.svg',
+        headline: 'Fire Engineering',
+        description: [
+          'Fire Safety Engineering',
+          'Smoke Detection',
+          'Smoke Ventilation',
+          'Automatic Fire Suppression Systems',
+          'Hazardous Substance Design',
+          'Building Audits',
+          'Code Compliant/Rational Design'
+        ]
       },
       {
-        image: '/assets/images/services/design_cost.svg',
-        headline: 'System concept and Detailed design, specification and cost estimateTender documentation and adgudication',
-        body: ''
+        image: '/assets/images/services/enginer.svg',
+        headline: 'Mechanical Engineering',
+        description: [
+          'HVAC Systems',
+          'Wet Services Design',
+          'Medical Gas Reticulation',
+          'On-site Water Storage and Pump Systems',
+          'Hot Water Plant',
+        ]
       },
       {
-        image: '/assets/images/services/contract.svg',
-        headline: 'Tender documentation and adgudication',
-        body: ''
+        image: '/assets/images/services/civil.svg',
+        headline: 'Civil and Structural',
+        description: [
+          'Structural Design and Analysis',
+          'Concrete Design',
+          'Structural Steel',
+          'Bulk Services Establishment',
+          'Earthworks',
+        ]
       },
       {
-        image: '/assets/images/services/qa_engineers.svg',
-        headline: 'Constuction suppervision and administration',
-        body: ''
+        image: '/assets/images/services/architecture.svg',
+        headline: 'Architecture',
+        description: [
+          'Building Plans',
+          'Fenestration Calculations and Energy Calculations',
+          'Council Submission and Running',
+        ]
       },
       {
-        image: '/assets/images/services/handover.svg',
-        headline: 'System independence and/or intergrated commissioning and handover',
-        body: ''
-      },
-      {
-        image: '/assets/images/services/audit.svg',
-        headline: 'Building audits and Due deligence execises',
-        body: ''
-      },
-      {
-        image: '/assets/images/services/perspective.svg',
-        headline: 'Perspective and retional design',
-        body: ''
-      },
-      {
-        image: '/assets/images/services/droughting.svg',
-        headline: 'Droughting services',
-        body: ''
+        image: '/assets/images/services/electricity.svg',
+        headline: 'Electrical Engineering',
+        description: [
+          'Power Transmission and Distribution',
+          'Lighting Protection and Earthing',
+          'Internal and External Reticulationa and Lighting',
+          'UPS and Generators',
+          'Solar Systems',
+        ]
       }
     ];
     
