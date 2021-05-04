@@ -15,7 +15,7 @@ export class SliderComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.images = ['01', '02', '06', '07', '05', '08', '09', '10'];
+    this.images = ['01', '02', '11', '12', '13', '14'];
     
 
     // setInterval()

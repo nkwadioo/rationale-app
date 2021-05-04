@@ -9,6 +9,8 @@
     .navbar-nav {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
         gap: 2rem;
         padding-left: 0;
         margin-bottom: 0;
@@ -20,7 +22,7 @@
 
 .logo {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     font-family: 'Mulish', 'Roboto', sans-serif;
 
     img {
