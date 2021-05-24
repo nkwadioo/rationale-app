@@ -1,30 +1,28 @@
 <div class="row mt-4 image_spaning">
-    <img src="./assets/images/about/buildingSite.jpg" alt="">
+    <img src="./assets/images/about/buildingSite.jpg" alt="" style="height: 300px;">
 </div>
 
 
 <div class="container mt-3" id="scope">
-    <div class="row">
-        <h3>Scope of Deliverables</h3>
-        <div class="row scope">
-            <div class="col-5 mr-auto" *ngFor="let scope of scopes; let i = index">
+    <h3 class="row">Scope of Deliverables</h3>
+        <div class="scope">
+            <div class="" *ngFor="let scope of scopes; let i = index">
                 <h4 class="heading">{{scope.headline}}</h4>
                 <ul class="body">
                     <li *ngFor="let description of scope.description">{{description}}</li>
                 </ul>
             </div>
         </div>
-    </div>
 </div>
 
 <div class="row mt-4 image_spaning">
-    <img src="./assets/images/slider/04.jpg" alt="" style="max-height: 280px; object-position: top;">
+    <img src="./assets/images/slider/04.jpg" alt="" style="max-height: 350px; object-position: top;">
 </div>
 
 <div class="slideshow-container row container p-0" id="projects">
     <h3>Projects and Clients</h3>
     <div class="mySlides w-100" *ngFor="let client of clients; let i = index;">
-        <div class="numbertext">{{i+1}} / {{clients.length}}</div>
+        <div class="numbertext col-12">{{i+1}} / {{clients.length}}</div>
         <div class="image_wrapper">
             <img src="{{client.image + '.jpg'}}">
             <a class="prev" (click)="plusSlides(-1)">&#10094;</a>

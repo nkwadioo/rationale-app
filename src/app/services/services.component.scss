@@ -73,24 +73,43 @@
     
 }
 
-@media (max-width: 760px) {
-    .service__img {
-        max-width: initial !important;
-        height: 56% !important;
-    }
+@media (max-width: 999px) {
+    .service {
+        grid-template-columns: 1fr;
 
-    div.col-12.even{
-        &::before {
-            bottom: -2px !important;
+        > div {
+            width: 570px;
+            margin: auto;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .service {
+        grid-template-columns: 100%;
+        > div {
+            width: 100%;
+
+            &:first-child .body li {
+                max-width: 20ch;
+            }
+        }
+
+        .service__img {
+            width: 21%;
         }
     }
 
-    h3 {
-        font-size: 22px;
+
+}
+
+@media (max-width: 340px) {
+    .service {
+
+        .service__img {
+            width: 16%;
+        }
     }
 
-    .heading {
-        font-size: 17px;
-    }
 
 }

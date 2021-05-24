@@ -22,7 +22,7 @@
 
 .logo {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     font-family: 'Mulish', 'Roboto', sans-serif;
 
     img {
@@ -57,10 +57,25 @@
     a {
         margin-right: -2px !important;
     }
+    .logo {
+        align-items: flex-start;
+
+        .name {
+            margin-top: -5px;
+        }
+    }
 }
 
 
 @media (min-width: 425px) {
+    .logo {
+        align-items: f;
+
+        .name {
+            // margin-top: -5px;
+        }
+    }
+
     img {
         max-height: 50px !important;
     }
