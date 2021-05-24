@@ -7,36 +7,41 @@
         <h3 class="">Contact Us</h3>
     </div>
 
-    <form action="">
+    <form  #contactForm=ngForm accept="">
         <div class="row mb-5">
             <div class="col-sm-6 col-12">
                 <div class="">
                     <label for="" class="pure-material-textfield-outlined w-100">
-                        <input type="text">
-                        <span class="">Name and surname</span>
+                        <input type="text" id="user" name="user" #user=ngModel ngModel required [(ngModel)]="subjectVal">
+                        <span class="">Name and surname <i>*</i></span>
+                        <app-validator [name]="user" label="Name and surname"></app-validator>
+                        <!--  name="user" id="user" name="user" #user=ngModel ngModel -->
                     </label>
                 </div>
-                <div class="">
+                <!-- <div class="">
                     <label for="" class="pure-material-textfield-outlined w-100">
-                        <input type="text">
+                        <input type="email" email="true" id="email_address" name="email_address" #email_address=ngModel ngModel>
                         <span class="">Email</span>
                     </label>
-                </div>
+                </div> -->
                 <div class="">
                     <label for="" class="pure-material-textfield-outlined w-100">
-                        <input type="text">
-                        <span class="">Subject</span>
+                        <input type="text" name="subject" id="subject" #subject=ngModel ngModel required [(ngModel)]="userVal">
+                        <span class="">Subject <i>*</i></span>
+                        <app-validator [name]="subject" label="Subject"></app-validator>
                     </label>
                 </div>
             </div>
             <div class="col-sm-6 col-12" >
                 <label for="" class="pure-material-textfield-outlined w-100">
-                    <textarea name="" id="" cols="30" rows="5"></textarea>
+                    <textarea cols="30" rows="5" name="description" id="description" #description=ngModel ngModel [(ngModel)]="descriptionVal"></textarea>
                     <span class="">Description</span>
+                    <!--  name="description" id="description" #description=ngModel ngModel -->
                 </label>
             </div>
             <div class="buttons col-12 text-center">
-                <button class="btn_2 btn-info px-5 py-2">Submit</button>
+                <a *ngIf="contactForm.valid" href="{{'mailto:enquirers@rationale.co.za?subject=' + subjectVal + '&body='+ (descriptionVal ? descriptionVal : '')}}" class="btn_2 btn-info px-5 py-2">Submit</a>
+                <button *ngIf="contactForm.invalid"(click)="validateInput(contactForm)" class="btn_2 btn-info px-5 py-2">Submit</button>
             </div>
         </div>
     </form>

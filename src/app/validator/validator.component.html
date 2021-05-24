@@ -1,0 +1,11 @@
+<div *ngIf="name.invalid && (name.dirty || name.touched)" style="color: red;" class="alert text-red">
+    <div *ngIf="name.errors.required">
+        {{label}} is required.
+    </div>
+    <div *ngIf="name.errors.minlength">
+        {{label}} must be at least {{min}} {{type}} long.
+    </div>
+    <div *ngIf="!name.errors.minlength && name.errors.pattern">
+        {{label}} is invalid.
+    </div>
+</div>
