@@ -12,4 +12,18 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  shearSite() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Rationale',
+        url: 'https://www.rationale.co.za/'
+      }).then(() => {
+        console.log('Thanks for sharing!');
+      })
+      .catch(console.error);
+    } else {
+      // fallback
+    }
+  }
+
 }

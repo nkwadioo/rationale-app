@@ -16,7 +16,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.services = [
-      {
+      { // Fire Engineering
         image: './assets/images/services/fire.svg',
         headline: 'Fire Engineering',
         description: [
@@ -26,7 +26,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
           'Automatic Fire Suppression Systems',
           'Hazardous Substance Design',
           'Building Audits',
-          'Code Compliant/Rational Design'
+          'Code Compliant or Rational Design'
         ]
       },
       {
