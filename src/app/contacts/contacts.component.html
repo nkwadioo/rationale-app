@@ -41,7 +41,7 @@
             </div>
             <div class="buttons col-12 text-center">
                 <a *ngIf="contactForm.valid" href="{{'mailto:enquirers@rationale.co.za?subject=' + subjectVal + '&body='+ (descriptionVal ? descriptionVal : '')}}" class="btn_2 btn-info px-5 py-2">Submit</a>
-                <button *ngIf="contactForm.invalid"(click)="validateInput(contactForm)" class="btn_2 btn-info px-5 py-2">Submit</button>e
+                <button *ngIf="contactForm.invalid"(click)="validateInput(contactForm)" class="btn_2 btn-info px-5 py-2">Submit</button>
             </div>
         </div>
     </form>
