@@ -1,14 +1,30 @@
-<div class="container" id="services">
-    <h3 class="row">Our Services</h3>
-    <div class="row service">
-        <div *ngFor="let service of services; let i = index">
-            <div class="service__info">
-                <h4 class="heading">{{service.headline}}</h4>
-                <ul class="body">
-                    <li *ngFor="let description of service.description">{{description}}</li>
-                </ul>
+<section id="services" class="py-24 bg-slate-100 dark:bg-slate-900/50" aria-labelledby="services-title">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+                <span class="text-orange-500 font-bold tracking-[0.2em] uppercase text-xs">Our Expertise</span>
+                <h2 id="services-title" class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-2">TECHNICAL SERVICES</h2>
             </div>
-            <img class="service__img" src="{{service.image}}" alt="">
+            <div class="h-px bg-slate-200 dark:bg-slate-800 grow mx-8 hidden lg:block"></div>
+            <p class="max-w-md text-slate-500 dark:text-slate-400">Specialized engineering disciplines delivered with precision and regulatory compliance.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            @for (service of services; track service.headline; let i = $index) {
+                <article
+                    class="group bg-white dark:bg-slate-800 p-8 border border-slate-200 dark:border-slate-700 hover:border-orange-500 dark:hover:border-orange-500 transition-all duration-300"
+                    data-aos="fade-up"
+                    [attr.data-aos-delay]="i * 80"
+                >
+                    <span class="material-symbols-outlined text-4xl text-orange-500 mb-6">{{ service.icon }}</span>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">{{ service.headline }}</h3>
+                    <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+                        @for (description of service.description; track description) {
+                            <li>• {{ description }}</li>
+                        }
+                    </ul>
+                </article>
+            }
         </div>
     </div>
-</div>
+</section>

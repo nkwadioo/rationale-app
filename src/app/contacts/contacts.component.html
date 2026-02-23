@@ -1,48 +1,108 @@
-
-<div class="row">
-    <img src="./assets/images/contact/contact.jpg" alt="">
-</div>
-<div class="container" id="contacts">
-    <div class="row">
-        <h3 class="">Contact Us</h3>
-    </div>
-
-    <form  #contactForm=ngForm accept="">
-        <div class="row mb-5">
-            <div class="col-sm-6 col-12">
-                <div class="">
-                    <label for="" class="pure-material-textfield-outlined w-100">
-                        <input type="text" id="user" name="user" #user=ngModel ngModel required [(ngModel)]="subjectVal">
-                        <span class="">Name and surname <i>*</i></span>
-                        <app-validator [name]="user" label="Name and surname"></app-validator>
-                        <!--  name="user" id="user" name="user" #user=ngModel ngModel -->
-                    </label>
-                </div>
-                <!-- <div class="">
-                    <label for="" class="pure-material-textfield-outlined w-100">
-                        <input type="email" email="true" id="email_address" name="email_address" #email_address=ngModel ngModel>
-                        <span class="">Email</span>
-                    </label>
-                </div> -->
-                <div class="">
-                    <label for="" class="pure-material-textfield-outlined w-100">
-                        <input type="text" name="subject" id="subject" #subject=ngModel ngModel required [(ngModel)]="userVal">
-                        <span class="">Subject <i>*</i></span>
-                        <app-validator [name]="subject" label="Subject"></app-validator>
-                    </label>
+﻿<section id="contact" class="relative py-24 bg-slate-100 dark:bg-slate-900 overflow-hidden" aria-labelledby="contactFormTitle">
+    <div class="absolute inset-0 blueprint-bg opacity-30"></div>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="bg-white dark:bg-slate-800 shadow-2xl flex flex-col lg:flex-row overflow-hidden">
+            <!-- Orange info panel -->
+            <div class="lg:w-1/2 p-12 lg:p-20 bg-orange-500 text-white">
+                <h2 id="contactFormTitle" class="text-3xl md:text-4xl font-bold mb-8">LET'S START <br />A PROJECT.</h2>
+                <p class="text-orange-100 mb-12 md:text-lg">Our team of experts are ready to help you navigate the complexities of your next engineering challenge.</p>
+                <div class="space-y-8 text-[10px] sm:text-lg">
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined mt-1">location_on</span>
+                        <div>
+                            <p class="font-bold uppercase tracking-wider text-xs mb-1">Office Location</p>
+                            <p>Sandton Business District, Johannesburg, South Africa</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined mt-1">mail</span>
+                        <div>
+                            <p class="font-bold uppercase tracking-wider text-xs mb-1">Email Us</p>
+                            <p>enquiries&#64;rationale.co.za</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined mt-1">call</span>
+                        <div>
+                            <p class="font-bold uppercase tracking-wider text-xs mb-1">Phone</p>
+                            <p>+27 (0) 79 646 8422</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-12" >
-                <label for="" class="pure-material-textfield-outlined w-100">
-                    <textarea cols="30" rows="5" name="description" id="description" #description=ngModel ngModel [(ngModel)]="descriptionVal"></textarea>
-                    <span class="">Description</span>
-                    <!--  name="description" id="description" #description=ngModel ngModel -->
-                </label>
-            </div>
-            <div class="buttons col-12 text-center">
-                <a *ngIf="contactForm.valid" href="{{'mailto:enquiries@rationale.co.za?subject=' + subjectVal + '&body='+ (descriptionVal ? descriptionVal : '')}}" class="btn_2 btn-info px-5 py-2">Submit</a>
-                <button *ngIf="contactForm.invalid"(click)="validateInput(contactForm)" class="btn_2 btn-info px-5 py-2">Submit</button>
+
+            <!-- Form panel -->
+            <div class="lg:w-1/2 p-12 lg:p-20">
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate autocomplete="on" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="fullName" class="block text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2">Full Name</label>
+                            <input
+                                id="fullName"
+                                type="text"
+                                formControlName="fullName"
+                                required
+                                class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 focus:border-orange-500 dark:focus:border-orange-500 focus:ring-0 focus:outline-none px-4 py-3 text-slate-800 dark:text-slate-100 transition-colors"
+                                [attr.aria-invalid]="getError('fullName') ? 'true' : 'false'"
+                                aria-describedby="fullNameHelp"
+                            />
+                            @if (getError('fullName'); as error) {
+                                <p id="fullNameHelp" class="mt-1 text-sm text-orange-500" role="alert">{{ error }}</p>
+                            }
+                        </div>
+                        <div>
+                            <label for="email" class="block text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2">Email Address</label>
+                            <input
+                                id="email"
+                                type="email"
+                                formControlName="email"
+                                required
+                                class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 focus:border-orange-500 dark:focus:border-orange-500 focus:ring-0 focus:outline-none px-4 py-3 text-slate-800 dark:text-slate-100 transition-colors"
+                                [attr.aria-invalid]="getError('email') ? 'true' : 'false'"
+                                aria-describedby="emailHelp"
+                            />
+                            @if (getError('email'); as error) {
+                                <p id="emailHelp" class="mt-1 text-sm text-orange-500" role="alert">{{ error }}</p>
+                            }
+                        </div>
+                    </div>
+                    <div>
+                        <label for="service" class="block text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2">Service Required</label>
+                        <select
+                            id="service"
+                            formControlName="service"
+                            class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 focus:border-orange-500 dark:focus:border-orange-500 focus:ring-0 focus:outline-none px-4 py-3 text-slate-800 dark:text-slate-100 transition-colors"
+                        >
+                            @for (option of serviceOptions; track option) {
+                                <option [value]="option">{{ option }}</option>
+                            }
+                        </select>
+                    </div>
+                    <div>
+                        <label for="description" class="block text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2">Message</label>
+                        <textarea
+                            id="description"
+                            rows="4"
+                            formControlName="description"
+                            required
+                            class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 focus:border-orange-500 dark:focus:border-orange-500 focus:ring-0 focus:outline-none px-4 py-3 text-slate-800 dark:text-slate-100 transition-colors"
+                            [attr.aria-invalid]="getError('description') ? 'true' : 'false'"
+                            aria-describedby="descriptionHelp"
+                        ></textarea>
+                        @if (getError('description'); as error) {
+                            <p id="descriptionHelp" class="mt-1 text-sm text-orange-500" role="alert">{{ error }}</p>
+                        }
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 py-4 font-bold tracking-widest hover:bg-orange-500 dark:hover:bg-orange-500 dark:hover:text-white transition-all uppercase skew-box"
+                        [disabled]="contactForm.invalid"
+                        [attr.aria-disabled]="contactForm.invalid"
+                    >
+                        Send Message
+                    </button>
+                </form>
             </div>
         </div>
-    </form>
-</div>
+    </div>
+</section>

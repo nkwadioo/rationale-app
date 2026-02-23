@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+  protected readonly menuOpen = signal(false);
+  protected readonly isDark = signal(true);
 
-  constructor() { }
-
-  ngOnInit(): void {
+  toggleMenu(): void {
+    this.menuOpen.update((open) => !open);
   }
 
+  closeMenu(): void {
+    this.menuOpen.set(false);
+  }
+
+  toggleDarkMode(): void {
+    document.documentElement.classList.toggle('dark');
+    this.isDark.update((v) => !v);
+  }
 }

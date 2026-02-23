@@ -1,89 +1,77 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+
+type ServiceItem = {
+  icon: string;
+  headline: string;
+  description: string[];
+};
 
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
-  styleUrls: ['./services.component.scss']
+  styleUrls: ['./services.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ServicesComponent implements OnInit, AfterViewInit {
-
-  services = [];
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  ngAfterViewInit(): void {
-    this.services = [
-      { // Fire Engineering
-        image: './assets/images/services/fire.svg',
-        headline: 'Fire Engineering',
-        description: [
-          'Fire Safety Engineering',
-          'Smoke Detection',
-          'Smoke Ventilation',
-          'Automatic Fire Suppression Systems',
-          'Hazardous Substance Design',
-          'Building Audits',
-          'Code Compliant or Rational Design'
-        ]
-      },
-      {
-        image: './assets/images/services/enginer.svg',
-        headline: 'Mechanical Engineering',
-        description: [
-          'HVAC Systems',
-          'Wet Services Design',
-          'Medical Gas Reticulation',
-          'On-site Water Storage and Pump Systems',
-          'Hot Water Plant',
-        ]
-      },
-      {
-        image: './assets/images/services/civil.svg',
-        headline: 'Civil and Structural',
-        description: [
-          'Structural Design and Analysis',
-          'Concrete Design',
-          'Structural Steel',
-          'Bulk Services Establishment',
-          'Earthworks',
-        ]
-      },
-      {
-        image: './assets/images/services/architecture.svg',
-        headline: 'Architecture',
-        description: [
-          'Building Plans',
-          'Fenestration Calculations and Energy Calculations',
-          'Council Submission and Running',
-        ]
-      },
-      {
-        image: './assets/images/services/electricity.svg',
-        headline: 'Electrical Engineering',
-        description: [
-          'Power Transmission and Distribution',
-          'Lighting Protection and Earthing',
-          'Internal and External Reticulationa and Lighting',
-          'UPS and Generators',
-          'Solar Systems',
-        ]
-      },
-      {
-        image: './assets/images/services/quantity.svg',
-        headline: 'Quantity Surveying',
-        description: [
-          'Project Cost Management',
-          'Specification and Bills of Quantities',
-          'Tender Evaluation and Adjudication',
-          'Cost Estimation,',
-        ]
-      }
-    ];
-    
-  }
-
-
+export class ServicesComponent {
+  protected readonly services: ServiceItem[] = [
+    {
+      icon: 'local_fire_department',
+      headline: 'Fire Engineering',
+      description: [
+        'Fire safety engineering and rational design',
+        'Smoke detection and ventilation strategies',
+        'Automatic suppression systems',
+        'Hazardous substance planning and audits',
+      ],
+    },
+    {
+      icon: 'settings_suggest',
+      headline: 'Mechanical Engineering',
+      description: [
+        'HVAC design and commissioning',
+        'Wet services and medical gas reticulation',
+        'On-site storage and pump systems',
+        'Thermal plant and hot water systems',
+      ],
+    },
+    {
+      icon: 'foundation',
+      headline: 'Civil & Structural',
+      description: [
+        'Structural design and analysis',
+        'Concrete and structural steel',
+        'Bulk services establishment',
+        'Earthworks planning and supervision',
+      ],
+    },
+    {
+      icon: 'architecture',
+      headline: 'Architecture',
+      description: [
+        'Building and site plans',
+        'Energy and fenestration calculations',
+        'Council submissions and approvals',
+      ],
+    },
+    {
+      icon: 'bolt',
+      headline: 'Electrical Engineering',
+      description: [
+        'Power transmission and distribution',
+        'Earthing and lightning protection',
+        'Internal and external reticulation',
+        'UPS, generators, and solar systems',
+      ],
+    },
+    {
+      icon: 'request_quote',
+      headline: 'Quantity Surveying',
+      description: [
+        'Project cost management',
+        'Specifications and bills of quantities',
+        'Tender evaluation and adjudication',
+        'Comprehensive cost estimation',
+      ],
+    },
+  ];
 }

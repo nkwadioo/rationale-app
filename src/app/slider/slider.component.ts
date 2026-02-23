@@ -1,16 +1,18 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.scss']
+  styleUrls: ['./slider.component.scss'],
+  imports: [CommonModule]
 })
 
 export class SliderComponent implements OnInit, AfterViewInit {
   slideIndex = 1;
   setInterConter = 0;
 
-  images: string[];
+  images: string[] = [];
 
   constructor() { }
 
@@ -40,17 +42,17 @@ export class SliderComponent implements OnInit, AfterViewInit {
   
   
 
-  plusSlides(n) {
+  plusSlides(n: number) {
     this.showSlides(this.slideIndex += n);
     this.setInterConter = 0;
   }
 
-  currentSlide(n) {
+  currentSlide(n: number) {
     this.showSlides(this.slideIndex = n);
     this.setInterConter = 0;
   }
 
-  showSlides(n) {
+  showSlides(n: number) {
     let i;
     let slides: any = document.getElementsByClassName("mySlides_2");
     console.log('[slider] change slide')
