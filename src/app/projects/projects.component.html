@@ -82,8 +82,8 @@
                 <article
                     class="pt-6"
                     [class]="i === 0 ? 'border-t-4 border-orange-500 pt-6' : 'border-t-4 border-slate-200 dark:border-slate-800 pt-6'"
-                    data-aos="fade-up"
-                    [attr.data-aos-delay]="i * 80"
+                    appScrollAnimate="fade-up"
+                    [animationDelay]="i * 80"
                 >
                     <h3 class="font-bold text-xl mb-4 text-slate-900 dark:text-white">{{ '0' + (i + 1) }}. {{ scope.headline }}</h3>
                     <ul class="text-sm space-y-2 text-slate-500 dark:text-slate-400">

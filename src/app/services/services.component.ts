@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ScrollAnimateDirective } from '../shared/scroll-animate.directive';
 
 type ServiceItem = {
   icon: string;
@@ -10,6 +11,7 @@ type ServiceItem = {
   selector: 'app-services',
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.scss'],
+  imports: [ScrollAnimateDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ServicesComponent {

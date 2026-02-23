@@ -13,8 +13,8 @@
             @for (service of services; track service.headline; let i = $index) {
                 <article
                     class="group bg-white dark:bg-slate-800 p-8 border border-slate-200 dark:border-slate-700 hover:border-orange-500 dark:hover:border-orange-500 transition-all duration-300"
-                    data-aos="fade-up"
-                    [attr.data-aos-delay]="i * 80"
+                    appScrollAnimate="fade-up"
+                    [animationDelay]="i * 80"
                 >
                     <span class="material-symbols-outlined text-4xl text-orange-500 mb-6">{{ service.icon }}</span>
                     <h3 class="text-xl font-bold mb-4 text-slate-900 dark:text-white group-hover:text-orange-500 transition-colors">{{ service.headline }}</h3>

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ScrollAnimateDirective } from '../shared/scroll-animate.directive';
 
 type ScopeItem = {
   headline: string;
@@ -17,6 +18,7 @@ type ClientItem = {
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
+  imports: [ScrollAnimateDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsComponent {
