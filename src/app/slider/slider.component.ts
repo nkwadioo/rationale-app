@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-slider',
+  standalone: true,
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss'],
   imports: [CommonModule]

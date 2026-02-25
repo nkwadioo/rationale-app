@@ -59,10 +59,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ng20TestApp:build:production"
+              "buildTarget": "rational-app:build:production"
             },
             "development": {
-              "buildTarget": "ng20TestApp:build:development"
+              "buildTarget": "rational-app:build:development"
             }
           },
           "defaultConfiguration": "development"

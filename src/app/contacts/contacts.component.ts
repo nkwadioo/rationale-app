@@ -10,6 +10,7 @@ type ContactFormControls = {
 
 @Component({
   selector: 'app-contacts',
+  standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.scss'],

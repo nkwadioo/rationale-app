@@ -12,6 +12,7 @@ type AnimationType = 'fade-up' | 'fade-left' | 'fade-right';
 
 @Directive({
   selector: '[appScrollAnimate]',
+  standalone: true,
 })
 export class ScrollAnimateDirective implements OnInit, OnDestroy {
   private readonly el = inject(ElementRef);

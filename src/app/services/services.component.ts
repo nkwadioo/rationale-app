@@ -9,6 +9,7 @@ type ServiceItem = {
 
 @Component({
   selector: 'app-services',
+  standalone: true,
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.scss'],
   imports: [ScrollAnimateDirective],
